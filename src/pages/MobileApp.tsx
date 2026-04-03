@@ -926,12 +926,25 @@ export default function MobileApp() {
               <div className="px-5 py-4 bg-[#5c4a40]/30 border-t border-white/5 flex flex-col gap-2">
                 <button
                   onClick={() => {
-                    window.open('/#/hq', '_blank');
+                    window.location.href = '/#/hq';
                   }}
                   className="w-full text-left px-4 py-2.5 bg-white/5 hover:bg-white/10 rounded-lg text-amber-50 text-[12px] font-bold flex items-center justify-between transition-colors shadow-sm"
                 >
                   <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-400"></div> 본사 홈페이지</div>
                   <ChevronRight size={14} className="opacity-50" />
+                </button>
+                <button
+                  onClick={() => {
+                    setIsSidebarOpen(false);
+                    window.location.href = '/#/admin';
+                  }}
+                  className="w-full text-left px-4 py-2.5 bg-gradient-to-r from-emerald-900/60 to-emerald-800/40 hover:from-emerald-800/70 hover:to-emerald-700/50 rounded-lg text-emerald-200 text-[12px] font-bold flex items-center justify-between transition-all shadow-sm border border-emerald-700/30"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                    가맹점 통합 관리 시스템 (이사전용)
+                  </div>
+                  <ChevronRight size={14} className="opacity-70" />
                 </button>
                 <button
                   onClick={() => {
@@ -943,6 +956,7 @@ export default function MobileApp() {
                   <ChevronRight size={14} className="opacity-50" />
                 </button>
               </div>
+
 
               {/* Business Info */}
               <div className="px-5 py-4 bg-[#4a3b33] text-amber-100/40 text-[10px] space-y-1.5 border-t border-white/5 pb-6">
