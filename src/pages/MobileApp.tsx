@@ -134,7 +134,18 @@ export default function MobileApp() {
   };
 
   return (
-    <div className="flex flex-col h-[100dvh] w-full max-w-md mx-auto bg-slate-50 relative animate-fade-in font-sans shadow-2xl overflow-hidden">
+    <div
+      className="flex flex-col w-full bg-slate-50 relative font-sans shadow-2xl"
+      style={{
+        height: '100dvh',
+        maxWidth: '480px',
+        overflowX: 'hidden',
+        overflowY: 'hidden',
+        overscrollBehavior: 'none',
+        touchAction: 'pan-y',
+        position: 'relative',
+      }}
+    >
       {/* App Dynamic Header */}
       <header className="flex items-center justify-between px-4 h-16 bg-gradient-to-r from-[#00A86B] via-[#008B5E] to-[#00704A] sticky top-0 z-[110] shadow-[0_4px_20px_rgba(0,0,0,0.3)] border-b-2 border-[#FFD700]/40 overflow-hidden">
         {/* Shine Sweep Animation for Header */}
