@@ -135,15 +135,12 @@ export default function MobileApp() {
 
   return (
     <div
-      className="flex flex-col w-full bg-slate-50 relative font-sans shadow-2xl"
+      className="flex flex-col w-full mx-auto bg-slate-50 relative font-sans shadow-2xl overflow-x-hidden"
       style={{
-        height: '100dvh',
+        minHeight: '100dvh',
         maxWidth: '480px',
-        overflowX: 'hidden',
-        overflowY: 'hidden',
         overscrollBehavior: 'none',
         touchAction: 'pan-y',
-        position: 'relative',
       }}
     >
       {/* App Dynamic Header */}
