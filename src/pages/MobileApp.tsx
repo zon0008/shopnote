@@ -94,7 +94,7 @@ export default function MobileApp() {
     showToast(`${PREMIUM_AVATARS.find(a => a.id === avatarId)?.name} 아바타로 변경되었습니다.`);
   };
 
-  const handleManagementAdd = () => {
+  const _handleManagementAdd = () => {
     // 임시 저장 로직
     console.log('Adding new entry:', managementFormData);
     alert('새 항목이 성공적으로 등록되었습니다.');
@@ -110,8 +110,9 @@ export default function MobileApp() {
       staffRole: ''
     });
   };
-  const [userRole, setUserRole] = useState<'USER' | 'DIRECTOR'>('DIRECTOR');
+  const [userRole] = useState<'USER' | 'DIRECTOR'>('DIRECTOR');
   const [isManagementExpanded, setIsManagementExpanded] = useState(false);
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -571,7 +572,8 @@ export default function MobileApp() {
                       className="flex gap-3 overflow-x-auto px-4 pb-2 no-scrollbar scroll-smooth"
                     >
                       {stories.slice(0, 5).map((story, i) => (
-                        <div key={i} className="shrink-0 w-32 h-40 rounded-xl overflow-hidden relative shadow-md border border-slate-100 group cursor-pointer" onClick={() => setZoomedImage(story.img)}>
+                        <div key={i} className="shrink-0 w-32 h-40 rounded-xl overflow-hidden relative shadow-md border border-slate-100 group cursor-pointer" onClick={() => setZoomedImage(story.img ?? null)}>
+
                           <img src={story.img} alt="art" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-2">
                             <span className="text-[9px] text-white font-bold line-clamp-1 opacity-90">{story.title}</span>
@@ -674,7 +676,8 @@ export default function MobileApp() {
 
                       <div className="relative bg-white/10 backdrop-blur-md border border-white/20 p-1.5 rounded-2xl shadow-2xl animate-bounce-gentle">
                         <div className="bg-white rounded-xl p-1 shadow-inner">
-                          <img src={design.logoUrl} alt="logo" className="w-8 h-8 object-contain" />
+                          <img src={design.logoImage} alt="logo" className="w-8 h-8 object-contain" />
+
                         </div>
                       </div>
                     </div>
