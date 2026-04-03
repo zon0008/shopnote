@@ -1,20 +1,45 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 @import "tailwindcss";
 
 @layer base {
+
+  html,
   body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
     background-color: #E2E8F0;
-    /* Editor environment dark/gray background */
-    @apply antialiased text-slate-800 flex justify-center min-h-screen m-0 p-0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 }
 
 @layer components {
   .app-container {
     background-color: #F8FAFC;
-    @apply w-full max-w-md h-full min-h-screen shadow-2xl relative overflow-hidden flex flex-col;
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
   }
 
   .glass-effect {
