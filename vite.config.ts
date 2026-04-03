@@ -5,6 +5,10 @@ import { viteSingleFile } from 'vite-plugin-singlefile'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), viteSingleFile()],
-  base: '/shopnote/'
+  base: '/shopnote/',
+  build: {
+    outDir: 'docs'
+  }
 })
+
 
